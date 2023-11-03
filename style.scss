@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,900;1,100;1,200;1,300;1,400;1,500;1,900&display=swap");
+
+$primary: #dc373d;
+$secondary: #e0603b;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.icon {
+  &::after,
+  &::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.containerize {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.navbar {
+  padding: 0;
+  background-color: white;
+  a {
+    text-decoration: none;
+    color: black;
+    text-wrap: nowrap;
+  }
+  &__container {
+    font-size: 17px;
+    padding: 0.5rem 2rem;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  &-container {
+    &__toggle {
+      display: block;
+      cursor: pointer;
+    }
+    &__icons {
+      display: flex;
+      gap: 2rem;
+    }
+    &__menu {
+      z-index: 100;
+      background-color: white;
+      display: none;
+      padding: 1rem 2rem;
+      width: 100%;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      gap: 3rem;
+      margin: 0;
+      &.active {
+        display: flex;
+      }
+      li {
+        width: fit-content;
+        padding: 0 0.5rem;
+        list-style: none;
+        &:hover,
+        &.active {
+          box-shadow: 0 5px 0 -1px $secondary;
+        }
+      }
+    }
+  }
+}
+
+.banner {
+  font-size: 0.3rem;
+  display: flex;
+  position: relative;
+  img {
+    min-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  &__container {
+    background-color: #000000c5;
+    flex: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 3em;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto 0;
+  }
+  .banner-container {
+    &__button {
+      font-size: 2em;
+      font-weight: 700;
+      color: white;
+      background-color: $primary;
+      padding: 0.15em 8em;
+      border-radius: 3em;
+      border: none;
+      outline: none;
+    }
+    &__greeting {
+      font-size: 4em;
+      color: white;
+      margin: 0;
+    }
+    &__text {
+      text-align: center;
+      width: 75%;
+      font-size: 1.5em;
+      margin: 0;
+      color: white;
+    }
+    &__title {
+      font-size: 10em;
+      color: $primary;
+      line-height: 3rem;
+      margin: 0;
+    }
+  }
+}
+
+.about {
+  &__content {
+  }
+  .about-content {
+    &__button {
+    }
+    &__text {
+    }
+    &__title {
+      color: black;
+      font-weight: 700;
+      font-size: 3rem;
+    }
+  }
+  .about-image {
+    &__container {
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    &__container {
+      padding: 2rem 3rem;
+    }
+    .navbar-container {
+      &__menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        padding: 0;
+        width: fit-content;
+      }
+      &__toggle {
+        display: none;
+      }
+    }
+  }
+  .banner {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .banner {
+    font-size: 0.8rem;
+    &-container__text {
+      padding: 3rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .banner {
+    font-size: 1rem;
+  }
+}
